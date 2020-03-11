@@ -12,49 +12,55 @@ body {
   margin: 0 auto;
 }
 
-.header__top {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  color: #3cc3b5;
-  padding: 10px 0;
-  .logo {
-    font-family: 'Lobster';
-    font-size: 3.7vw;
+.header {
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #3cc3b5;
+    padding: 10px 0;
   }
-  .header__search {
+  &__search {
     width: 45%;
     padding: 5px;
     border: 1px solid #e1e1e1;
   }
-  .cart {
-    font-size: 2.5vw;
-    i {
-      font-size: 3vw;
+  &__nav {
+    background: #4ccfc1;
+    padding: 5px 0;
+    &-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #ffffff;
+      font-size: 1.7vw;
+      .header__nav-item {
+        text-decoration: none;
+        color: #ffffff;
+        &:visited {
+          color: #ffffff;
+        }
+        &:hover {
+          filter: opacity(0.7);
+        }
+      }
     }
+  }
+  &__nav-burger-button {
+    display: none;
   }
 }
 
-.header__nav {
-  background: #4ccfc1;
-  padding: 5px 0;
-  &-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    color: #ffffff;
-    font-size: 1.7vw;
-    .header__nav-item {
-      text-decoration: none;
-      color: #ffffff;
-      &:visited {
-        color: #ffffff;
-      }
-      &:hover {
-        filter: opacity(0.7);
-      }
-    }
+.logo {
+  font-family: 'Lobster';
+  font-size: 3.7vw;
+}
+
+.cart {
+  font-size: 2.5vw;
+  i {
+    font-size: 3vw;
   }
 }
 
@@ -124,8 +130,8 @@ body {
     align-items: center;
   }
   &__item {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
     border-left: 1px solid #e3e3e3;
     padding: 0.5% 0;
   }
@@ -186,20 +192,6 @@ body {
   }
   &__item-photo {
     width: 100%;
-  }
-}
-
-@media (min-width: 576px) {
-  .recent-categories-slider__item {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-@media (min-width: 992px) {
-  .recent-categories-slider__item {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
   }
 }
 
@@ -308,5 +300,113 @@ body {
   &__nav-column-header {
     font-size: 2vw;
     margin-bottom: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__search, .cart {
+      display: none;
+    }
+    &__top {
+      justify-content: center;
+      padding: 0;
+      .logo {
+        font-size: 7.7vw;
+      }
+    }
+    &__nav {
+      padding: 0;
+    }
+    &__nav-content {
+      display: none;
+    }
+    &__nav-burger-button {
+      display: block;
+      text-align: center;
+      i {
+        font-size: 6vw;
+        color: #ffffff;
+        vertical-align: middle;
+      }
+    }
+  }
+  .top-items-slider {
+    &__content {
+      flex-direction: column;
+    }
+    &__item-photo-container {
+      margin: 0 auto 5px;
+      width: 80%;
+    }
+    &__item-information {
+      text-align: center;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    &__item-description {
+      margin-bottom: 10px;
+      font-size: 2.2vw;
+      line-height: 2.6vw;
+    }
+    &__shop-now-button {
+      border: 2px solid #ffffff;
+      padding: 2px 20px;
+    }
+    &__item-name {
+      font-size: 9vw;
+      line-height: 7.5vw;
+      margin-bottom: 10px;
+    }
+  }
+
+  .recent-categories-slider {
+    &__item {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    &__item-name {
+      font-size: 4vw;
+      line-height: 3.5vw;
+    }
+  }
+
+  .buy-button {
+    font-size: 2.8vw;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+
+  .featured-products {
+    &__header {
+      padding: 0;
+      text-align: center;
+      font-size: 6vw;
+    }
+    &__items-container {
+      flex-direction: column;
+    }
+    &__item {
+      width: 100%;
+    }
+    &__item-name {
+      font-size: 5vw;
+    }
+    &__item-price {
+      font-size: 4vw;
+    }
+    &__item-photo-container {
+      margin: 0 auto;
+    }
+  }
+  .footer {
+    &__nav-column-header {
+      margin: 0;
+      text-align: center;
+      font-size: 2.7vw;
+    }
+    &__nav-column-item {
+      display: none;
+    }
   }
 }
