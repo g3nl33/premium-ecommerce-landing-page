@@ -415,6 +415,17 @@ body {
   .wrapper {
     max-width: 90%;
   }
+  
+  .top-items-slider {
+    &__item-name {
+      font-size: 11vw;
+      line-height: 9.5vw;
+    }
+    &__content {
+      padding: 3% 0;
+    }
+  }
+
   .footer {
     &__nav-columns-container {
       flex-direction: column;
