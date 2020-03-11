@@ -410,3 +410,20 @@ body {
     }
   }
 }
+
+@media (max-width: 480px) {
+  .wrapper {
+    max-width: 90%;
+  }
+  .footer {
+    &__nav-columns-container {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5% 4%;
+    }
+    &__nav-column-header {
+      font-size: 3.7vw;
+      line-height: 4vw;
+    }
+  }
+}
